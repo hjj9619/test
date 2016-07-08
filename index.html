@@ -16,7 +16,6 @@
 	</style>
 </head>
 <body>
-<button id="btn">提交代码</button>
 <textarea name="" id="text" cols="30" rows="10">
 <!DOCTYPE html>
 <html lang="en">
@@ -40,17 +39,14 @@
 	var text = document.getElementById("text"),
 			btn = document.getElementById("btn"),
 			fra = document.getElementById("fra"),
-			btn = document.getElementById("btn"),
 			doc = fra.contentWindow.document;
-	/*text.onkeyup = function() {
+	text.onkeyup = function() {
 		Ajax().post('hello.php', 'code='+text.value, function(txt){
 			//doc.body.innerHTML = txt;
 			doc.write(txt);
 		});
-	}*/
-	btn.onclick = function(){
-		doc.write(text.value);
 	}
+
 
 </script>
 </body>
