@@ -4,14 +4,20 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-    #text, #fra{
-    	width:49%;
-    	float:left;
-    	border:none;
-    	height:600px;
+		body{
+    	font-family: "Microsoft Yahei";
+		}
+    #text{
     	border:1px solid #000;
-    	max-width: 50%;
-    	max-height: 600px;
+    	width:100%;
+			height:600px;
+    }
+    #btn{
+    	width:100%;
+    	line-height: 40px;
+    	font-size: 30px;
+    	border:none;
+    	font-family: "Microsoft Yahei";
     }
 	</style>
 </head>
@@ -24,29 +30,18 @@
   <title>测试案例</title>
 </head>
 <body>
-<!-- 
-  目前还不能测试 JavaScript 代码
- -->
 </body>
 </html>
 </textarea>
-<iframe class="active" src="localhost:8888/test/text.html" id="fra" frameborder="0"></iframe>
-<!-- <iframe src="hello.php" id="fra" frameborder="0"></iframe> -->
-
-<script src="ajax.js"></script>
-
+<br>
+<button id="btn">运行代码</button>
 <script>
 	var text = document.getElementById("text"),
-			btn = document.getElementById("btn"),
-			fra = document.getElementById("fra"),
-			doc = fra.contentWindow.document;
-	text.onkeyup = function() {
-		Ajax().post('hello.php', 'code='+text.value, function(txt){
-			doc.body.innerHTML = txt;
-			//doc.write(txt);
-		});
-	}
-
+			btn = document.getElementById('btn');
+  btn.onclick = function () {
+    var oNewWindow = window.open('about:blank');
+    oNewWindow.document.write(text.value);
+  };
 
 </script>
 </body>
