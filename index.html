@@ -42,8 +42,8 @@
 			doc = fra.contentWindow.document;
 	text.onkeyup = function() {
 		Ajax().post('hello.php', 'code='+text.value, function(txt){
-			//doc.body.innerHTML = txt;
-			doc.write(txt);
+			doc.body.innerHTML = txt;
+			//doc.write(txt);
 		});
 	}
 
