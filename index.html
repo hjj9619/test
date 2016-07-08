@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+    #text, #fra{
+    	width:49%;
+    	float:left;
+    	border:none;
+    	height:600px;
+    	border:1px solid #000;
+    	max-width: 50%;
+    	max-height: 600px;
+    }
+	</style>
+</head>
+<body>
+<button id="btn">提交代码</button>
+<textarea name="" id="text" cols="30" rows="10">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>测试案例</title>
+</head>
+<body>
+<!-- 
+  目前还不能测试 JavaScript 代码
+ -->
+</body>
+</html>
+</textarea>
+<iframe class="active" src="localhost:8888/test/text.html" id="fra" frameborder="0"></iframe>
+<!-- <iframe src="hello.php" id="fra" frameborder="0"></iframe> -->
+
+<script src="ajax.js"></script>
+
+<script>
+	var text = document.getElementById("text"),
+			btn = document.getElementById("btn"),
+			fra = document.getElementById("fra"),
+			btn = document.getElementById("btn"),
+			doc = fra.contentWindow.document;
+	/*text.onkeyup = function() {
+		Ajax().post('hello.php', 'code='+text.value, function(txt){
+			//doc.body.innerHTML = txt;
+			doc.write(txt);
+		});
+	}*/
+	btn.onclick = function(){
+		doc.write(text.value);
+	}
+
+</script>
+</body>
+</html>

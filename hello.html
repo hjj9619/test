@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>运行</title>
+<script>
+window.onload = function () {
+  var oTextare = document.getElementById('tar');
+  var oBtn = document.getElementById('btn');
+  oBtn.onclick = function () {
+    var oNewWindow = window.open('about:blank');
+    oNewWindow.document.write(oTextare.value);
+  };
+}
+</script>
+</head>
+<body>
+<textarea rows="10" cols="40" id="tar"></textarea><br/>
+<input id="btn" type='button' value="运行代码"></input>
+</body>
+</html>
